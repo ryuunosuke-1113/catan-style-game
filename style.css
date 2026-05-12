@@ -1,0 +1,180 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #eef6ff;
+  color: #333;
+}
+
+.app {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.board {
+  position: relative;
+  width: 420px;
+  height: 430px;
+  margin: 30px auto;
+}
+
+.hex {
+  position: absolute;
+  width: 70px;
+  height: 80px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #222;
+}
+.forest {
+  background: #5fa85f;
+}
+
+.field {
+  background: #e6d36a;
+}
+
+.mountain {
+  background: #999;
+}
+
+.hill {
+  background: #c97b45;
+}
+
+.pasture {
+  background: #8fd36b;
+}
+
+.desert {
+  background: #e7c98b;
+}
+.hex {
+  flex-direction: column;
+  gap: 4px;
+}
+
+.resource {
+  font-size: 15px;
+}
+
+.number-chip {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #fff3cf;
+  border: 2px solid #7a4a22;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.number-chip.empty {
+  background: transparent;
+  border: none;
+  font-size: 13px;
+}
+.vertex {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: white;
+  border: 2px solid #333;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+.vertex {
+  cursor: pointer;
+}
+
+.vertex.settlement {
+  width: 18px;
+  height: 18px;
+  background: #4c8bf5;
+  border: 3px solid white;
+}
+.edge {
+  position: absolute;
+  height: 6px;
+  background: #d9d9d9;
+  transform-origin: left center;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.edge.road {
+  background: #4c8bf5;
+}
+#current-player {
+  font-weight: bold;
+  font-size: 18px;
+}
+.settlement.player-0,
+.edge.road.player-0 {
+  background: #4c8bf5;
+}
+
+.settlement.player-1,
+.edge.road.player-1 {
+  background: #f05a5a;
+}
+
+.settlement.player-2,
+.edge.road.player-2 {
+  background: #f5d04c;
+}
+
+.settlement.player-3,
+.edge.road.player-3 {
+  background: #5bc46b;
+}
+#resources {
+  margin: 12px auto;
+  padding: 10px;
+  background: white;
+  border-radius: 10px;
+  font-weight: bold;
+}
+.vertex.city {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+}
+.hex.robber {
+  outline: 4px solid black;
+  box-shadow: 0 0 0 4px white;
+}
+.robber-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+.hex.robber-selectable {
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
+
+.discard-area {
+  margin: 12px auto;
+  padding: 12px;
+  background: white;
+  border-radius: 10px;
+  max-width: 360px;
+}
+
+.discard-buttons button {
+  margin: 4px;
+}

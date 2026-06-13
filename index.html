@@ -9,16 +9,61 @@
   <body>
     <div class="app">
       <h1>本物寄りカタン</h1>
+      <button id="save-game-button">ゲームを保存</button>
+      <button id="clear-save-button">保存データ削除</button>
+      <p id="human-player-info"></p>
+
       <p id="current-player">現在のプレイヤー: 青</p>
       <button id="next-turn-button">次のプレイヤーへ</button>
       <button id="roll-button">サイコロを振る</button>
       <p id="dice-result">結果: -</p>
+      <p id="cpu-status"></p>
       <button id="buy-dev-card">発展カード購入</button>
       <button id="use-knight">騎士カード使用</button>
+      <button id="use-year-of-plenty">資源2枚カード使用</button>
+      <button id="use-monopoly">独占カード使用</button>
+      <button id="use-road-building">街道建設カード使用</button>
       <div id="resources"></div>
+      <div id="cpu-trade-offer" class="hidden"></div>
+      <div id="trade-area" class="trade-area hidden">
+        <h3>交換</h3>
+
+        <div class="trade-section">
+          <h4>自分が渡す</h4>
+          <div id="give-controls"></div>
+        </div>
+
+        <div class="trade-section">
+          <h4>自分が欲しい</h4>
+          <div id="receive-controls"></div>
+        </div>
+
+        <div class="trade-section">
+          <p>条件を提示して、承諾したプレイヤーから選びます。</p>
+          <select id="trade-target" class="hidden">
+            <option value="bank">銀行</option>
+            <option value="0">青</option>
+            <option value="1">赤</option>
+            <option value="2">黄</option>
+            <option value="3">緑</option>
+          </select>
+        </div>
+
+        <button id="trade-confirm">交換実行</button>
+        <button id="trade-cancel">閉じる</button>
+      </div>
+
+      <button id="open-trade">交換</button>
+      <div id="dev-cards"></div>
       <div id="board" class="board"></div>
       <div id="scores"></div>
       <div id="discard-area" class="discard-area hidden"></div>
+      <div id="steal-area" class="steal-area hidden"></div>
+    </div>
+    <div id="result-screen" class="hidden">
+      <h2>ゲーム終了！</h2>
+      <h3 id="winner-text"></h3>
+      <div id="final-scores"></div>
     </div>
 
     <script src="script.js"></script>

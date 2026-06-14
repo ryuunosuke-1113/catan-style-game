@@ -919,7 +919,7 @@ function cpuPlaceSetupRoad() {
   const bestScore = getRoadExpansionScore(sortedCandidates[0], player);
 
   const topCandidates = sortedCandidates.filter((edge) => {
-    return bestScore - getRoadExpansionScore(edge, player) <= 5;
+    return bestScore - getRoadExpansionScore(edge, player) <= 1;
   });
 
   const edge = topCandidates[Math.floor(Math.random() * topCandidates.length)];
@@ -1085,7 +1085,7 @@ function getCpuBuildableRoadEdge(player) {
   const bestScore = getRoadExpansionScore(sortedCandidates[0], player);
 
   const topCandidates = sortedCandidates.filter((edge) => {
-    return bestScore - getRoadExpansionScore(edge, player) <= 5;
+    return bestScore - getRoadExpansionScore(edge, player) <= 1;
   });
 
   return topCandidates[Math.floor(Math.random() * topCandidates.length)];

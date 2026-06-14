@@ -916,7 +916,11 @@ function cpuPlaceSetupRoad() {
     }),
   );
 
-  const topCandidates = sortedCandidates.slice(0, 2);
+  const bestScore = getRoadExpansionScore(sortedCandidates[0], player);
+
+  const topCandidates = sortedCandidates.filter((edge) => {
+    return bestScore - getRoadExpansionScore(edge, player) <= 5;
+  });
 
   const edge = topCandidates[Math.floor(Math.random() * topCandidates.length)];
   roads.push({
@@ -1078,7 +1082,11 @@ function getCpuBuildableRoadEdge(player) {
     return getRoadExpansionScore(b, player) - getRoadExpansionScore(a, player);
   });
 
-  const topCandidates = sortedCandidates.slice(0, 3);
+  const bestScore = getRoadExpansionScore(sortedCandidates[0], player);
+
+  const topCandidates = sortedCandidates.filter((edge) => {
+    return bestScore - getRoadExpansionScore(edge, player) <= 5;
+  });
 
   return topCandidates[Math.floor(Math.random() * topCandidates.length)];
 }
